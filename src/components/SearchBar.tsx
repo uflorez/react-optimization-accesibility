@@ -31,22 +31,20 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch, isLoading = false }) =>
             disabled={isLoading}
           />
           {query && (
-            <button
-              type="button"
+            <div
               onClick={handleClear}
-              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600"
+              className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 hover:text-gray-600 cursor-pointer"
             >
               ✕
-            </button>
+            </div>
           )}
         </div>
-        <button
-          type="submit"
-          disabled={isLoading}
-          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-blue-300 transition-colors"
+        <div
+          onClick={handleSubmit}
+          className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-blue-300 transition-colors cursor-pointer"
         >
           Search
-        </button>
+        </div>
       </div>
     </form>
   );
